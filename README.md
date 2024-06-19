@@ -42,6 +42,8 @@ cd pixelated_transform
 ``` bash
 pip install Pillow numpy imageio opencv-python pytube
 ```
+## NOTA:
+Las imagenes que estan en las carpetas final_frames, original_frames y pixelated_frames los debes borrar, estan solamente para podersubir las carpetas a github.
 
 Luego ya se puede empezar a ejecutar los scripts :)
 
