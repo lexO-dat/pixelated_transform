@@ -14,6 +14,7 @@ La estructura del directorio es la siguiente:
 - Scripts:
   - `extract_Frames.py`: Extrae frames de un video.
   - `pixelate.py`: Aplica un efecto de pixelación a las imágenes.
+  - `pixelate_glitch.py`: Aplica un efecto de pixelación y añade una intermitencia (glitch) a las imágenes cada ciertos frames.
   - `noise_effect_frames.py`: Añade un efecto de ruido estático a las imágenes.
   - `frames_to_mp4.py`: Convierte una secuencia de imágenes en un archivo de video.
   - `rename_files.py`: Renombra archivos en un directorio de forma secuencial.
@@ -53,10 +54,18 @@ Luego ya se puede empezar a ejecutar los scripts :)
    ```bash
    python extract_Frames.py
    ```
-2. **Pixelación de Frames**: Utiliza `pixelate.py` para aplicar un efecto de pixelación a los frames extraídos.
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+2.
+- **Pixelación de Frames con glitch**: Utiliza `pixelate_glitch.py` para aplicar un efecto de pixelación y de glitch a los frames extraídos.
+    ```bash
+   python pixelate_glitch.py
+   ```
+o
+- **Pixelación de Frames**: Utiliza `pixelate.py` para aplicar un efecto de pixelación a los frames extraídos.
     ```bash
    python pixelate.py
    ```
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 3. **Aplicación de Efecto de Ruido**: Utiliza `noise_effect_frames.py` para añadir ruido estático a los frames pixelados, cabe mencionar que el script utiliza multithreading por lo que recomiendo no tener nada abierto al momento de ejecutarlo.
     ```bash
    python noise_effect_frames.py
