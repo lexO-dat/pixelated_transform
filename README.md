@@ -12,6 +12,7 @@ La estructura del directorio es la siguiente:
 - `/original_frames`: Contiene los frames extraídos de un video original.
 - `/pixelated_frames`: Almacena los frames después de aplicar el efecto de pixelación.
 - Scripts:
+  - `gui_app.py`: Es la version con interfaz de todas las funcionalidades  
   - `extract_Frames.py`: Extrae frames de un video.
   - `pixelate.py`: Aplica un efecto de pixelación a las imágenes.
   - `pixelate_glitch.py`: Aplica un efecto de pixelación y añade una intermitencia (glitch) a las imágenes cada ciertos frames.
@@ -20,15 +21,6 @@ La estructura del directorio es la siguiente:
   - `rename_files.py`: Renombra archivos en un directorio de forma secuencial.
   - `webcam_live_pixelate.py`: Aplica pixelación en tiempo real a la entrada de una webcam.
   - `youtube_video_downloader.py`: Descarga videos de YouTube.
-
-## Librerías Utilizadas
-
-- **Pillow (PIL Fork)**: Manipulación de imágenes.
-- **NumPy**: Operaciones numéricas para manipulación de arrays.
-- **imageio**: Lectura y escritura de imágenes y videos.
-- **OpenCV (cv2)**: Procesamiento de video e imágenes.
-- **pytube**: Descarga de videos de YouTube.
-- **multiprocessing**: Paralelización de procesos.
 
 ## Pasos para Ejecutar el Proyecto
 
@@ -41,43 +33,29 @@ git clone https://github.com/lexO-dat/pixelated_transform/
 cd pixelated_transform
 ```
 ``` bash
-pip install Pillow numpy imageio opencv-python pytube
+pip install -r requeriments.txt
 ```
 ## NOTA:
-Las imagenes que estan en las carpetas final_frames, original_frames y pixelated_frames los debes borrar, estan solamente para podersubir las carpetas a github.
+Las imagenes que estan en las carpetas final_frames, original_frames y pixelated_frames los debes borrar, estan solamente para poder subir las carpetas a github.
 
-Luego ya se puede empezar a ejecutar los scripts :)
+## Ejecutar con interfaz grafica:
 
-## Pasos para transformar un video
+``` bash
+python gui_app.py
+```
 
-1. **Extracción de Frames**: Utiliza `extract_Frames.py` para extraer frames de un video. Modifica las variables `video_path` y `output_folder` según sea necesario.
-   ```bash
-   python extract_Frames.py
-   ```
------------------------------------------------------------------------------------------------------------------------------------------------------------------
-2.
-- **Pixelación de Frames con glitch**: Utiliza `pixelate_glitch.py` para aplicar un efecto de pixelación y de glitch a los frames extraídos.
-    ```bash
-   python pixelate_glitch.py
-   ```
-o
-- **Pixelación de Frames**: Utiliza `pixelate.py` para aplicar un efecto de pixelación a los frames extraídos.
-    ```bash
-   python pixelate.py
-   ```
----------------------------------------------------------------------------------------------------------------------------------------------------------------
-3. **Aplicación de Efecto de Ruido**: Utiliza `noise_effect_frames.py` para añadir ruido estático a los frames pixelados, cabe mencionar que el script utiliza multithreading por lo que recomiendo no tener nada abierto al momento de ejecutarlo.
-    ```bash
-   python noise_effect_frames.py
-   ```
-4. **Renombrado de Frames (Opcional)**:los frams deben estar numerados secuencialmente antes de convertirlos en video, si no los tienes asi utiliza `rename_files.py`.
- ```bash
-   python rename_files.py
-   ```
-5. **Conversión de Frames a Video**: `Con frames_to_mp4.py`, convierte los frames procesados de nuevo en un archivo de video.
-   ```bash
-   python frames_to_mp4.py
-   ```
+Para transformar un video o imagen este debe estar en la carpeta pixelated_transform (carpeta donde estan todos los scripts), de ser un video solo coloca el nombre, si es una imagen debes agregar la extension de esta.
+
+Se pueden selecciona entre 3 colores:
+  - Rojo
+  - Verde
+  - Azul
+
+El preview solo muestra como quedaria el pixeleo de la imagen, no el noise. Tambien, el slice sirve para poder visualizar distintos frames del video (en caso que sea un video a transformar).
+
+Si se usa el noise recomiendo tener pocas cosas abiertas en el dispositivo, ya que consume bastante CPU (PROXIMAMENTE INTEGRARE TRABAJADO CON GPU)
+
+## NOTA: si quieres usar los scripts por seprado sin interfaz hay espacios comentados dentro de cada uno los cuales dependiendo de lo que busques te permite usarlos.
 
 ## Scripts extra:
 ### Pixelación en Vivo con Webcam
