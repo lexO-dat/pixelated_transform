@@ -36,7 +36,8 @@ def create_video_from_frames(frame_folder, output_path, output_video_name, fps=3
     video_writer.release()
     print(f'Video output to {output_video_path}')
 
-frame_folder = './final_frames/'
+""" frame_folder = './pixelated_frames/'
 output_path = './'
-output_video_name = 'output_video.mp4'
+output_video_name = 'output.mp4'
 create_video_from_frames(frame_folder, output_path, output_video_name)
+ """

@@ -29,9 +29,11 @@ def process_folder(input_folder, output_folder, noise_intensity):
     with Pool() as pool:
         pool.map(process_image, tasks)
 
-if __name__ == '__main__':
-    input_folder = './pixelated_frames' 
+
+""" if __name__ == '__main__':
+    input_folder = './pixelated_frames'
     output_folder = './final_frames'      
     noise_intensity = 0.2         
 
     process_folder(input_folder, output_folder, noise_intensity)
+ """

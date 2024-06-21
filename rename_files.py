@@ -16,6 +16,6 @@ def rename_files(directory):
         os.rename(old_path, new_path)
         print(f"Renamed '{file}' to '{new_name}'")
 
-directory = './final_frames'
+directory = './original_frames'
 #directory = './output_frames'
 rename_files(directory)
