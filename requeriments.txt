@@ -1,9 +1,7 @@
 flet
-os
-tempfile
-shutil
 imageio
-pil
+imageio-ffmpeg
+pillow
 numpy
 opencv-python
 opencv-python-headless
