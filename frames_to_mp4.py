@@ -3,8 +3,12 @@ import os
 
 def create_video_from_frames(frame_folder, output_path, output_video_name, fps=30):
     frame_files = [os.path.join(frame_folder, f) for f in os.listdir(frame_folder) if f.endswith('.png')]
-    frame_files.sort(key=lambda f: int(''.join(filter(str.isdigit, f))))  # Ordenar archivos por número
+    def extract_number(f):
+        numbers = ''.join(filter(str.isdigit, f))
+        return int(numbers) if numbers else 0 #retorna 0 si no hay números en el nombre del archivo
 
+    frame_files.sort(key=extract_number)  #ordena los archivos por el numero del nombre 
+    
     if not frame_files:
         raise ValueError("No frames found in the specified directory.")
 
